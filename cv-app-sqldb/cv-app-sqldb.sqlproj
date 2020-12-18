@@ -139,8 +139,6 @@
     <Build Include="stg\Stored Procedures\usp_Afdeling.sql" />
     <Build Include="Security\stg.sql" />
     <Build Include="Security\dwh.sql" />
-    <Build Include="External Resources\EXTDS_CV_Blob_ID.sql" />
-    <Build Include="External Resources\EXTDS_CV_Blob.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="SqlSchemaCompare.scmp" />
