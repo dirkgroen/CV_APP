@@ -140,5 +140,10 @@
     <Build Include="Security\dwh.sql" />
     <Build Include="External Resources\EXTDS_CV_Blob_ID.sql" />
     <Build Include="External Resources\EXTDS_CV_Blob.sql" />
+    <Build Include="External Resources\EXTDS_CV_Blob_ID_1.sql" />
+    <Build Include="External Resources\EXTDS_CV_Blob_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SqlSchemaCompare.scmp" />
   </ItemGroup>
 </Project>
