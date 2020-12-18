@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>cv_app_sqldb</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{a151e9a8-7b8a-48d5-89f3-9d4e8e725277}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>cv_app_sqldb</RootNamespace>
+    <AssemblyName>cv_app_sqldb</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="stg\" />
+    <Folder Include="stg\Tables\" />
+    <Folder Include="dwh\" />
+    <Folder Include="dwh\Views\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="stg\Stored Procedures\" />
+    <Folder Include="Security\" />
+    <Folder Include="External Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\ListOfProcedures.sql" />
+    <Build Include="dbo\Tables\API_CALLS_OFFSETAPI.sql" />
+    <Build Include="dbo\Tables\API_CALLS_OFFSET.sql" />
+    <Build Include="dbo\Tables\API_CALLS_ID_Aantal.sql" />
+    <Build Include="dbo\Tables\API_CALLS_ID.sql" />
+    <Build Include="dbo\Tables\API_CALLS_Huidige.sql" />
+    <Build Include="dbo\Tables\API_CALLS_FAIL.sql" />
+    <Build Include="stg\Tables\Medewerker.sql" />
+    <Build Include="stg\Tables\Titel.sql" />
+    <Build Include="stg\Tables\Taal.sql" />
+    <Build Include="stg\Tables\Role.sql" />
+    <Build Include="stg\Tables\Organisate.sql" />
+    <Build Include="stg\Tables\Opleiding_Soort.sql" />
+    <Build Include="stg\Tables\Opleiding.sql" />
+    <Build Include="stg\Tables\Medewerker_Taal.sql" />
+    <Build Include="stg\Tables\Medewerker_Opleiding.sql" />
+    <Build Include="stg\Tables\Medewerker_Kennis_Ervaring.sql" />
+    <Build Include="stg\Tables\Medewerker_Kennis.sql" />
+    <Build Include="stg\Tables\Medewerker_Interesse.sql" />
+    <Build Include="stg\Tables\Medewerker_Info.sql" />
+    <Build Include="stg\Tables\Medewerker_Ervaring.sql" />
+    <Build Include="stg\Tables\Label.sql" />
+    <Build Include="stg\Tables\Kennis_Type.sql" />
+    <Build Include="stg\Tables\Kennis_Controle.sql" />
+    <Build Include="stg\Tables\Instituut.sql" />
+    <Build Include="stg\Tables\Functie.sql" />
+    <Build Include="stg\Tables\Ervaring_Info.sql" />
+    <Build Include="stg\Tables\Branche.sql" />
+    <Build Include="stg\Tables\Afdeling.sql" />
+    <Build Include="stg\Tables\Inzetbaarheids_Rol.sql" />
+    <Build Include="dwh\Views\vw_FCT_Opleidingen.sql" />
+    <Build Include="dwh\Views\vw_FCT_Kennis_Ervaringen.sql" />
+    <Build Include="dwh\Views\vw_FCT_Kennis.sql" />
+    <Build Include="dwh\Views\vw_FCT_Ervaringen.sql" />
+    <Build Include="dwh\Views\vw_DIM_Organisatie.sql" />
+    <Build Include="dwh\Views\vw_DIM_Opleiding.sql" />
+    <Build Include="dwh\Views\vw_DIM_Medewerker.sql" />
+    <Build Include="dwh\Views\vw_DIM_Kennis.sql" />
+    <Build Include="dwh\Views\vw_DIM_Functie.sql" />
+    <Build Include="dwh\Views\vw_DIM_Branche.sql" />
+    <Build Include="dbo\Stored Procedures\usp_truncate_aantal.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Run_Stage.sql" />
+    <Build Include="dbo\Stored Procedures\usp_offset.sql" />
+    <Build Include="dbo\Stored Procedures\usp_idcheck.sql" />
+    <Build Include="dbo\Stored Procedures\usp_huidige.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Fail.sql" />
+    <Build Include="stg\Stored Procedures\usp_Titel.sql" />
+    <Build Include="stg\Stored Procedures\usp_Taal.sql" />
+    <Build Include="stg\Stored Procedures\usp_Role.sql" />
+    <Build Include="stg\Stored Procedures\usp_Organisate.sql" />
+    <Build Include="stg\Stored Procedures\usp_Opleiding_Soort.sql" />
+    <Build Include="stg\Stored Procedures\usp_Opleiding.sql" />
+    <Build Include="stg\Stored Procedures\usp_Medewerker_Taal.sql" />
+    <Build Include="stg\Stored Procedures\usp_Medewerker_Opleiding.sql" />
+    <Build Include="stg\Stored Procedures\usp_Medewerker_Kennis_Ervaring.sql" />
+    <Build Include="stg\Stored Procedures\usp_Medewerker_Kennis.sql" />
+    <Build Include="stg\Stored Procedures\usp_Medewerker_Interesse.sql" />
+    <Build Include="stg\Stored Procedures\usp_Medewerker_Info.sql" />
+    <Build Include="stg\Stored Procedures\usp_Medewerker_Ervaring.sql" />
+    <Build Include="stg\Stored Procedures\usp_Medewerker.sql" />
+    <Build Include="stg\Stored Procedures\usp_Label.sql" />
+    <Build Include="stg\Stored Procedures\usp_Kennis_Type.sql" />
+    <Build Include="stg\Stored Procedures\usp_Kennis_Controle.sql" />
+    <Build Include="stg\Stored Procedures\usp_Instituut.sql" />
+    <Build Include="stg\Stored Procedures\usp_Functie.sql" />
+    <Build Include="stg\Stored Procedures\usp_Ervaring_Info.sql" />
+    <Build Include="stg\Stored Procedures\usp_Branche.sql" />
+    <Build Include="stg\Stored Procedures\usp_Afdeling.sql" />
+    <Build Include="Security\stg.sql" />
+    <Build Include="Security\dwh.sql" />
+    <Build Include="External Resources\EXTDS_CV_Blob_ID.sql" />
+    <Build Include="External Resources\EXTDS_CV_Blob.sql" />
+  </ItemGroup>
+</Project>

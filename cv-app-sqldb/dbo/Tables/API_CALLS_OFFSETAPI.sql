@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[API_CALLS_OFFSETAPI] (
+    [Tablename] NVARCHAR (100) NULL,
+    [APIKEY]    NVARCHAR (220) NULL
+);
+
